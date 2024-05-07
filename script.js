@@ -34,7 +34,7 @@
 
             var loggedInUser = getFromLocalStorage('username');
             if (loggedInUser) {
-                alert('Logged in as ' + loggedInUser);
+                alert('Logged in as username' + loggedInUser);
                 var existingButton = document.createElement('button');
                 existingButton.id = 'existing';
                 existingButton.textContent = 'Login as existing user';
