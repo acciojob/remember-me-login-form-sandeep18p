@@ -19,7 +19,7 @@
 
         document.getElementById('submit').addEventListener('click', function(event) {
             event.preventDefault();
-			var rememberCheckbox = document.getElementById('remember');
+			var rememberCheckbox = document.getElementById('checkbox');
 
             if (rememberCheckbox.checked) {
                 var username = document.getElementById('username').value;
