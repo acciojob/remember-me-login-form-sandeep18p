@@ -1,35 +1,34 @@
-function saveToLocalStorage(key, value) {
-    localStorage.setItem(key, value);
-}
-
-function removeFromLocalStorage(key) {
-    localStorage.removeItem(key);
-}
-
-function checkLocalStorage(key) {
-    return localStorage.getItem(key) !== null;
-}
-
-function getFromLocalStorage(key) {
-    return localStorage.getItem(key);
-}
-
-document.getElementById('submit').addEventListener('click', function(event) {
-    event.preventDefault();
-    var rememberCheckbox = document.getElementById('checkbox');
-
-    if (rememberCheckbox.checked) {
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-
-        saveToLocalStorage('username', username);
-        saveToLocalStorage('password', password);
-    } else { 
-        removeFromLocalStorage('username');
-        removeFromLocalStorage('password');
-    }
-    var loggedInUser = getFromLocalStorage('username');
-    alert('Logged in as ' + loggedInUser);
-    var loggedInUser = getFromLocalStorage('username');
-  
+//your JS code here. If required.
+if (localStorage.getItem('username') && localStorage.getItem('password')) {
+    var existingButton = document.getElementById('existing');
+   existingButton.style.display = "block";
+existingButton.addEventListener('click', function() {
+    var username = localStorage.getItem('username');
+    alert('Logged in as .');
 });
+
+
+}
+else{
+
+document.getElementById('existing').style.display = 'none';
+}
+document.getElementById("submit").addEventListener("click",(e)=>{
+e.preventDefault();
+let username = document.getElementById("username").value;
+let password = document.getElementById("password").value;
+var rememberMe = document.getElementById('checkbox').checked;
+
+if (rememberMe) {
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+} else {
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
+}
+
+alert('Logged in as username');	
+});
+if (localStorage.getItem('username') && localStorage.getItem('password')) {
+
+}
